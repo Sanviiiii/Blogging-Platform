@@ -14,31 +14,36 @@ def signup(request):
         email = request.POST['email']
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
-        
-        if User.objects.filter(username=username):
-            messages.error(request, "Username Already Exists, Please create new user name")
-
-        if User.objects.filter(email=email):
-            messages.error(request, "This Email is already Registered...")
 
         if len(username) > 10:
             messages.error(request, "username exceeds the length")
+            return redirect('signup')
 
-        if not username.isalnum():
+        elif not username.isalnum():
             messages.error(request, "User name must be Alpha-Numeric")
-
-        if pass1 == pass2:
-            # creates a user
-            myuser = User.objects.create_user(username=username, password=pass1, email=email)
-            myuser.first_name = first_name
-            #print(myuser.first_name)
-            myuser.last_name = last_name
-            myuser.save()
-
-            messages.success(request, "Your account has been created successfully...")
-        else:
-            messages.error(request, "Password didnt matched...")
+            return redirect('signup')
+        
+        elif User.objects.filter(email=email):
+            messages.error(request, "This Email is already Registered...")
             return redirect('index')
+
+        elif pass1 == pass2:
+            # creates a user
+            try:
+                myuser = User.objects.create_user(username=username, password=pass1, email=email)
+                myuser.first_name = first_name
+                #print(myuser.first_name)
+                myuser.last_name = last_name
+                myuser.save()
+
+                messages.success(request, "Your account has been created successfully...")
+
+            except:
+                messages.error(request, "Username already Exists, Please create new user name...")
+                return redirect('index')
+        else:
+            messages.error(request, "Please make sure that you Enter same password While 'Re-Entering' ")
+            return redirect('signup')
 
         # function Name = 'login'
         return redirect('index')
