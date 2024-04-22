@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form method="post" action="">
+    <h1 class="container">Login</h1>
+    <form class="container" method="post" action="">
         {% csrf_token %}
         <label for="uname">User Name</label><br>
         <input type="text" name="uname" id="uname" placeholder="Enter username..." required><br><br>

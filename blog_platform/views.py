@@ -14,7 +14,7 @@ def signup(request):
         email = request.POST['email']
         pass1 = request.POST['pass1']
         pass2 = request.POST['pass2']
-
+        # validations
         if len(username) > 10:
             messages.error(request, "username exceeds the length")
             return redirect('signup')
@@ -32,7 +32,7 @@ def signup(request):
             try:
                 myuser = User.objects.create_user(username=username, password=pass1, email=email)
                 myuser.first_name = first_name
-                #print(myuser.first_name)
+                # print(myuser.first_name)
                 myuser.last_name = last_name
                 myuser.save()
 
@@ -59,12 +59,12 @@ def signin(request):
         user = authenticate(username=username, password=passwd)
         if user is not None:
             login(request, user)
-            first_name = username
+            first_name = user.first_name.title()
             print(first_name)
             return render(request, "index.html", context={'fname': first_name})
         else:
-            messages.error(request, "Bad Credentials")
-            return redirect('signin')
+            messages.error(request, "Bad Credentials, Please try Again...")
+            return redirect('index')
 
     return render(request, "login.html")
 
@@ -72,3 +72,6 @@ def signout(request):
     logout(request)
     messages.success(request, "You have successfully Logged Out")
     return redirect('index')
+
+def createPost(request):
+    return render(request, "createPost.html")
