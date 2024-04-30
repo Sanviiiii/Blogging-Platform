@@ -61,7 +61,7 @@ def signin(request):
             login(request, user)
             first_name = user.first_name.title()
             print(first_name)
-            return render(request, "index.html", context={'fname': first_name})
+            return render(request, "index.html", context={'fname': first_name, 'username': username})
         else:
             messages.error(request, "Bad Credentials, Please try Again...")
             return redirect('index')
@@ -74,4 +74,9 @@ def signout(request):
     return redirect('index')
 
 def createPost(request):
+    if request.method == "POST":
+        title = request.POST['title']
+        description = request.POST['description']
+        print(title)
+
     return render(request, "createPost.html")
