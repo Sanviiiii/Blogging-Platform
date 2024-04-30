@@ -10,6 +10,8 @@
 </head>
 <body>
     <h1 class="container">Create Your Post</h1><br><br>
+    <form method="post">
+        {% csrf_token %}
     <div class="container">
     <button type="button">Add a Photo</button><br><br>
     <h5 label for="title">Give Title: </label></h5>
@@ -17,7 +19,8 @@
     <h5 label for="description">Add Description: </label></h5>
     <textarea name="description" id="description" cols="80" rows="10" placeholder="Enter the Description..." required></textarea>
     <br><br>
-    <button type="submit">Submit</button>
+    <button type="submit">Post</button>
     </div>
+</form>
 </body> 
 </html>
