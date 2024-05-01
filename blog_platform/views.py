@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .forms import PostForm
 
 def index(request):
     return render(request, "index.html")
@@ -75,8 +76,12 @@ def signout(request):
 
 def createPost(request):
     if request.method == "POST":
-        title = request.POST['title']
-        description = request.POST['description']
-        print(title)
+        form = PostForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            print(title)
+
+        
 
     return render(request, "createPost.html")
