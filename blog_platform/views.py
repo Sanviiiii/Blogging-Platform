@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .forms import PostForm
+from .models import PostData
 
 def index(request):
     return render(request, "index.html")
@@ -77,10 +78,16 @@ def signout(request):
 def createPost(request):
     if request.method == "POST":
         form = PostForm(request.POST)
+        print(form.is_valid())
         if form.is_valid():
-            title = form.cleaned_data['title']
+            # To extarct data from web page
+            title = form.cleaned_data['title_name']
             description = form.cleaned_data['description']
+            # author = 
             print(title)
+            # To store Data
+            PostData.objects.create(title_name=title, description=description)
+            
 
         
 
