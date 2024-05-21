@@ -55,6 +55,7 @@ def signup(request):
 def signin(request):
     if request.method == "POST":
         username = request.POST['uname']
+        request.session["username"] = username
         passwd = request.POST['passwd']
         
         # To authenticate (In-built)
@@ -83,12 +84,13 @@ def createPost(request):
             # To extarct data from web page
             title = form.cleaned_data['title_name']
             description = form.cleaned_data['description']
-            # author = 
+            # To get username which is stored in session
+            author = User.objects.get(username = request.session.get("username"))
+            print(author)
             print(title)
             # To store Data
-            PostData.objects.create(title_name=title, description=description)
+            PostData.objects.create(title_name=title, description=description, author=author)
             
 
-        
 
     return render(request, "createPost.html")
