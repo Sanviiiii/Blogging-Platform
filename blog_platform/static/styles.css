@@ -2,6 +2,51 @@
     font-family: 'Times New Roman', Times, serif;
 }
 /* create post */
+
+
 .container{
-    background-color: blue;
+    background-image: url('bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+div h1{
+    color: #FFFFFF;
+    font-size:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headings{
+    color: #FFFFFF;
+    font-size: 25px;
+    margin-left: 100px;
+
+}
+
+.form-control{
+    margin-left: 100px;
+    max-width: fit-content;
+border: 2px solid white;
+}
+.form-control:hover{
+    border: 2px solid rgb(26, 16, 203);
+}
+.text{
+    margin-left: 100px;
+    border: 2px solid white; 
+    
+}
+.text:hover{
+    border: 2px solid rgb(26, 16, 203); 
+}
+.add{
+    margin-left: 100px;
+    
+}
+.post{
+    margin-left: 100px;
+    margin-bottom: 50px;
 }

@@ -14,16 +14,16 @@
     <form method="post">
         {% csrf_token %}
        
-    <button type="button" class="btn btn-primary">Add a Photo</button><br><br>
+    <button type="button" class="btn btn-primary add">Add a Photo</button><br><br>
     <div class="form-group">
-    <h5 label for="title">Give Title: </label></h5>
-    <input type="text" class="form-control" name="title_name" id="title" placeholder="Enter the Title..." required>
+    <h5 class="headings" label for="title">Give Title: </label></h5>
+    <input  type="text" class="form-control" name="title_name" id="title" placeholder="Enter the Title..." required>
     </div><br><br>
     <div class="form-group">
-    <h5 label for="description">Add Description: </label></h5>
-    <textarea name="description" id="description" cols="80" rows="10" placeholder="Enter the Description..." required></textarea>
+    <h5 class="headings" label for="description">Add Description: </label></h5>
+    <textarea class="text" name="description" id="description" cols="80" rows="10" placeholder="Enter the Description..." required></textarea>
 </div><br><br>
-    <button type="submit" class="btn btn-primary">Post</button>
+    <button type="submit" class="btn btn-primary post">Post</button>
    
 </form>
 </div>
