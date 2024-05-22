@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-        <!--link rel="stylesheet" href="{% static 'styles.css' %}"-->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Create Post</title>
 </head>
@@ -19,7 +19,8 @@
     <h5 label for="description">Add Description: </label></h5>
     <textarea name="description" id="description" cols="80" rows="10" placeholder="Enter the Description..." required></textarea>
     <br><br>
-    <button type="submit">Post</button>
+    <button type="submit">Post</button><br><br>
+    <button class="color" type="submit"><a href="">Home</a></button>
     </div>
 </form>
 </body> 

@@ -6,7 +6,11 @@ from .forms import PostForm
 from .models import PostData
 
 def index(request):
-    return render(request, "index.html")
+
+    post_data = PostData.objects.all()
+
+    return render(request, "index.html", {'post_data': post_data})
+    
 
 def signup(request):
     if request.method == "POST":

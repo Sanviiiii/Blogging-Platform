@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
         {% load static %}
+        <link rel="stylesheet" href="static/styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <title>Blog Platform</title>
+        <title>Blogging Platform</title>
     </head>
     <body>
         <h1 class="container">Blogging Platform</h1>
@@ -24,6 +25,20 @@
         <button  type="submit"><a href="/signup">Sign Up</a></button>
         <button type="submit"><a href="/signin">Log In</a></button>
         {% endif %}
+        </div><br><br>
+        <hr>
+        <div>
+            <h2>Welcome to the Best Blogging Page: </h2><br>
+            <hr>
+            <div>
+                {% for item in post_data %}
+            <h3>Title: {{ item.title_name }}</h3><br>
+            <h6>By:</h6><p>{{ item.author }}</p>
+            <h4>Description: </h4>
+            <p>{{ item.description }}</p>
+            <hr>
+                {% endfor %}
+            </div>
         </div>
         
 
