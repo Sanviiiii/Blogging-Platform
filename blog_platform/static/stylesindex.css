@@ -32,22 +32,49 @@ h1 {
 
 button {
   margin: 50px;
+  margin-top: 20px;
+  border: 0px solid transparent;
+}
+button:hover{
+  border: 5px solid whitesmoke;
 }
 
-
-h2 {
-  color: #007bff;
-}
-
-h3 {
-  color: #28a745;
-}
 
 button a {
   display: block;
   width: 100%;
   height: 100%;
+  
 }
-.additional{
-  background-image: url();
+
+.container h1{
+  font-size: 85px;
 }
+.container h1:hover{
+  font-size: 90px;
+}
+.container h2{
+  font-size:50px ;
+  margin-top: 75px;
+
+}
+.container h3{
+  margin-bottom: 50px;
+}
+/*styling for additional div*/
+
+
+.additional {
+  margin-top: 50px;
+  display: flex; 
+  flex-wrap: wrap; 
+  margin-right: 20px; 
+}
+
+.styled-image {
+  max-width: 100%;  
+  height: auto; 
+}
+
+
+
