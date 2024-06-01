@@ -1,11 +1,9 @@
-*{
-    font-family: 'Times New Roman', Times, serif;
-}
+
 /* create post */
 
 
 .container{
-    background-image: url('bg.jpeg');
+    background-image: url('background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
