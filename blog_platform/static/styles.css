@@ -50,3 +50,12 @@ border: 2px solid white;
     margin-left: 100px;
     margin-bottom: 50px;
 }
+.happy{
+    
+        color: #FFFFFF;
+        font-size:40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+}
