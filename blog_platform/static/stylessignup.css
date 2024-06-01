@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+ h1{
+  font-size: 85px;
+  color: rgb(4, 4, 25);
+}
+h1:hover{
+  font-size: 90px;
+  
+}
+.label{
+  font-size: 20px;
+  font-weight: bold;
+}
+button{
+  border: 0px solid transparent;
+}
+button:hover{
+  border: 0px solid white;
+}
