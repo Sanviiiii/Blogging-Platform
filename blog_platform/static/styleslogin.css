@@ -1,0 +1,50 @@
+body{
+  background-image: url('background.jpeg');
+}
+
+
+h1{
+  font-size: 85px;
+}
+h1:hover{
+  font-size: 90px;
+}
+
+button{
+  border: 0px solid transparent;
+}
+button :hover{
+  border: 0px solid white;
+}
+
+.details{
+font-size: 20px;
+font-weight: bold;
+}
+
+.thought {
+  position: relative;
+}
+
+.quote{
+  font-size: 40px;
+}
+
+
+.quote p{
+  padding-top: 100px;
+}
+.blog{
+  font-size: 50px;
+}
+.blog:hover{
+  font-size: 55px;
+}
+
+
+
+
+
+
+
+  
