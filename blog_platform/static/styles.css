@@ -11,14 +11,14 @@
 }
 
 div h1{
-    color: #FFFFFF;
+    color: #010852;
     font-size:80px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .headings{
-    color: #FFFFFF;
+    color:  #010852;
     font-size: 25px;
     margin-left: 100px;
 
@@ -50,7 +50,7 @@ border: 2px solid white;
 }
 .happy{
     
-        color: #FFFFFF;
+        color:  #010852;
         font-size:40px;
         display: flex;
         align-items: center;
